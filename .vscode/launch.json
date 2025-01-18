@@ -5,7 +5,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/dist/app.js", // 编译后的入口文件
+            "program": "${workspaceFolder}/dist/index.js", // 编译后的入口文件
             "preLaunchTask": "tsc: build - tsconfig.json", // 生成 TypeScript
             "outFiles": [
                 "${workspaceFolder}/dist/**/*.js" // 生成的 JavaScript 文件
