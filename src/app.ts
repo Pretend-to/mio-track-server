@@ -1,9 +1,9 @@
 import app from './config/server';
-import eventRoutes from './routes/eventRoutes';
+import emailRoutes from './routes/emailRoutes';
 import logger from './utils/logger';
 import sequelize from './config/database';
 
-app.use('/api', eventRoutes);
+app.use('/api', emailRoutes);
 
 const PORT = process.env.PORT || 3000;
 

@@ -1,13 +1,3 @@
-### Mio Track API 文档
-
-*   **更新时间：** 2024-07-29
-*   **作者：** Mio
-*   **版本号：** 1.9.0
-
-#### 1. 简介
-
-Mio Track API 允许开发者集成用户管理、项目跟踪、数据埋点、数据展示以及埋点事件管理功能到其应用中。本文档概述了 API 端点、请求/响应格式、认证方式、会话管理策略、安全策略以及数据分析相关内容。
-
 #### 2. API 概述
 
 ##### 2.1 基础 URL
@@ -31,18 +21,45 @@ https://track.krumio.com
 
 ##### 3.1 用户管理接口
 
-###### 3.1.1 用户注册
+###### 3.1.1 验证用户邮箱
+
+*   **接口:** `/v1/verifyemail`
+*   **方法:** `POST`
+*   **描述:** 验证用户邮箱接口。
+*   **请求参数:**
+
+    ```json
+    {
+        "email": "string"
+    }
+    ```
+*   **响应参数:**
+
+    ```json
+    {
+        "code": 200,
+        "message": "success",
+        "data": {
+            "verifysession": "string"
+        }
+    }
+
+    ```
+
+###### 3.1.2 用户注册
 
 *   **接口:** `/v1/register`
+
 *   **方法:** `POST`
 *   **描述:** 新用户注册接口。
 *   **请求参数:**
 
     ```json
     {
-        "username": "string",
         "password": "string",
-        "userAgent": "string"
+        "email": "string",
+        "verifysession": "string",
+        "verifycode": "string"
     }
     ```
 
@@ -52,10 +69,6 @@ https://track.krumio.com
     {
         "code": 200,
         "message": "success",
-        "data": {
-            "userId": "string",
-            "username": "string"
-        }
     }
     ```
 
@@ -82,7 +95,6 @@ https://track.krumio.com
         "data": {
             "token": "string",
             "userId": "string",
-            "username": "string"
         }
     }
     ```
@@ -100,7 +112,7 @@ https://track.krumio.com
     ```json
     {
         "name": "string",
-         "domains": array  // 新增，项目允许的域名白名单，例如： ['example.com', 'test.example.com']
+        "domains": []
     }
     ```
 
@@ -114,7 +126,7 @@ https://track.krumio.com
             "projectId": "string",
             "projectUuid": "string",
             "name": "string",
-              "domains": array // 新增，项目允许的域名白名单，例如： ['example.com', 'test.example.com']
+              "domains": []
         }
     }
     ```
@@ -247,7 +259,7 @@ https://track.krumio.com
         "eventData": "object",
         "referrerUrl": "string",
         "currentUrl": "string",
-          "trackId": "string",
+        "trackId": "string",
         "timestamp": "number",
         "sign": "string", // 数据签名
         "os": "string",

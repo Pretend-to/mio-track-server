@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找回密码</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header h1 {
+            color: #333;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>找回密码</h1>
+        </div>
+        <div class="content">
+            <p>亲爱的用户，</p>
+            <p>我们收到了您找回密码的请求。请通过以下验证码重置您的密码：</p>
+            <h2 style="text-align: center; color: #007bff;">{{code}}</h2>
+            <p>如果您没有请求重置密码，请忽略此邮件。</p>
+            <p>此验证码将在 5 分钟后过期。</p>
+        </div>
+        <div class="footer">
+            <p>感谢您使用我们的服务！</p>
+            <p>&copy; {{year}} Mio-track. 保留所有权利。</p>
+        </div>
+    </div>
+</body>
+</html>

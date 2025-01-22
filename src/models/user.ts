@@ -2,20 +2,21 @@ import { Model, DataTypes, Sequelize } from 'sequelize';
 import sequelize from '../config/database';
 
 class User extends Model {
-  public id!: number;
-  public userId!: string;
+  public userId!: number; // 将 id 替换为 userId
+  public email!: string;
   public password!: string;
-  public userAgent!: string;
   public createdAt!: Date;
 }
+
 User.init(
   {
-    id: {
+    userId: { // 将 userId 设置为主键
       type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+      primaryKey: true, // 这里设置为主键
+      allowNull: false,
+      unique: true,
     },
-    userId: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mio-track 账号注册验证码</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 10px 0;
+        }
+        .header h1 {
+            color: #333;
+        }
+        .content {
+            margin: 20px 0;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mio-track 账号注册验证码</h1>
+        </div>
+        <div class="content">
+            <p>亲爱的用户，</p>
+            <p>感谢您注册Mio-track。请使用以下验证码完成您的注册过程：</p>
+            <h2 style="text-align: center; color: #007bff;">{{code}}</h2>
+            <p>如果您没有请求此验证码，请忽略此邮件。此验证码将在5分钟后过期。</p>
+        </div>
+        <div class="footer">
+            <p>感谢您使用Mio-track！</p>
+            <p>&copy; {{year}} Mio-track. 保留所有权利。</p>
+        </div>
+    </div>
+</body>
+</html>
